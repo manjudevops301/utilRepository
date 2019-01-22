@@ -4,7 +4,7 @@ def uploadWarArtifactory() {
 		uploadSpec = """{
 			"files":[{
 			"pattern": "target/*.war",
-			"target": "Java-war-snapshots/${artifactId}/${version}.${buildNo}/"
+			"target": "JfrogMavenExample/${artifactId}/${version}.${buildNo}/"
 			}]
 		}"""
 		server.upload(uploadSpec) 	
