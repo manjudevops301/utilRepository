@@ -15,7 +15,4 @@ def sendingTheEmail() {
 	print 'mail sent'
 }
 
-def cleanTheWorkspace() {
-	print 'cleaned workspace'
-}
 return this

@@ -15,7 +15,9 @@ def execute() {
 		uploadArtifactory();
 		print 'Uploading artifactory is success'
 		deployToTomcat();
-		print 'Build Management Success'
+		print 'Deployment is Success'
+		deleteDir()
+		print 'Successfully deleted the directory'
 	}
 }
 
