@@ -1,17 +1,17 @@
 def execute() {
-	stage('stageCheckoutProject') {
+	stage('ProjectCheckout') {
 		executeCode();
 		executePOMFile();
 		print 'Checkout Project Success'
 	}
 	
-	stage('stageBuildAutomation') {
+	stage('Build') {
 		executeSonarScan();
 		executeMavenBuild();
 		print 'Build Automation Success'
     }
 	
-	stage('stageBuildManagement') {
+	stage('Deploy') {
 		uploadArtifactory();
 		print 'Uploading artifactory is success'
 		deployToTomcat();
@@ -44,7 +44,6 @@ def uploadArtifactory() {
 
 def deployToTomcat() {
 	print 'Deploying war file to docker file'
-	/*bat prop.TOMCAT_DEPLOY+' '+prop.TOMCAT_LOCATION*/
 	bat prop.DOCKER_FILE_BUILD
 	bat prop.DOCKER_TOMCAT_RUN
 }
