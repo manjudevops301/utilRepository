@@ -39,7 +39,7 @@ def executeMavenBuild() {
 }
 
 def uploadArtifactory() {
-	commonUtility.uploadWarArtifactory();
+	commonUtil.uploadWarArtifactory();
 }
 
 def deployToTomcat() {
