@@ -7,7 +7,7 @@ def uploadWarArtifactory() {
 			"target": "JfrogMavenExample/${artifactId}/${version}.${buildNo}/"
 			}]
 		}"""
-		server.upload(uploadSpec) 	
+		/*server.upload(uploadSpec)*/	
 	}
 }
 
