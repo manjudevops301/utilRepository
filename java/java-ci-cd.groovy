@@ -19,22 +19,22 @@ def execute() {
 }
 
 def executeCode() {
-	git url: props.JAVA_APP_REPO_GIT_URL,
-    branch: props.BRANCH
+	git url: prop.JAVA_APP_REPO_GIT_URL,
+    branch: prop.BRANCH
 }
 
 def executePOMFile() {
-	pom = readMavenPom file: props.POM_FILE
+	pom = readMavenPom file: prop.POM_FILE
 	artifactId=pom.artifactId
 	version=pom.version
 }
 
 def executeSonarScan() {
-	sh props.SONAR_SCAN+' '+props.SONAR_HOST+' '+props.SONAR_TEST+' '+props.SONAR_IGNORE
+	bat prop.SONAR_SCAN+' '+prop.SONAR_HOST+' '+prop.SONAR_TEST+' '+prop.SONAR_IGNORE
 }
 
 def executeMavenBuild() {
-	sh props.MAVEN_BUILD
+	bat prop.MAVEN_BUILD
 }
 
 def uploadArtifactory() {
@@ -42,9 +42,9 @@ def uploadArtifactory() {
 }
 
 def deployToTomcat() {
-	/*sh props.TOMCAT_DEPLOY+' '+props.TOMCAT_LOCATION*/
-	sh props.DOCKER_TOMCAT_STOP
-	sh props.DOCKER_FILE_BUILD
-	sh props.DOCKER_TOMCAT_RUN
+	/*sh prop.TOMCAT_DEPLOY+' '+prop.TOMCAT_LOCATION*/
+	bat prop.DOCKER_TOMCAT_STOP
+	bat prop.DOCKER_FILE_BUILD
+	bat prop.DOCKER_TOMCAT_RUN
 }
 return this
