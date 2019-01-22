@@ -12,12 +12,6 @@ def uploadWarArtifactory() {
 }
 
 def sendingTheEmail() {
-	emailext( 
-			attachLog: true,
-			subject: '${DEFAULT_SUBJECT}', 
-			body: '${DEFAULT_CONTENT}',
-			to: prop.BUILD_EMAIL_RECIPIENT
-		);
 	print 'mail sent'
 }
 
