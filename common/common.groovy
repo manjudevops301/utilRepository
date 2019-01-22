@@ -1,6 +1,6 @@
 def uploadWarArtifactory() {
 	script {
-		server = Artifactory.server props.ARTIFACT_ID
+		server = Artifactory.server prop.ARTIFACT_ID
 		uploadSpec = """{
 			"files":[{
 			"pattern": "target/*.war",
@@ -16,7 +16,7 @@ def sendingTheEmail() {
 			attachLog: true,
 			subject: '${DEFAULT_SUBJECT}', 
 			body: '${DEFAULT_CONTENT}',
-			to: props.BUILD_EMAIL_RECIPIENT
+			to: prop.BUILD_EMAIL_RECIPIENT
 		);
 	print 'mail sent'
 }
