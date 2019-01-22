@@ -23,7 +23,7 @@ def sendingTheEmail() {
 
 def cleanTheWorkspace() {
 	script {
-		sh 'rm -rf ../'+jobName+'/*'
+		bat 'rm -rf ../'+jobName+'/*'
 	}
 	print 'cleaned workspace'
 }
