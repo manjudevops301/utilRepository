@@ -16,7 +16,6 @@ def sendingTheEmail() {
 }
 
 def cleanTheWorkspace() {
-	deleteDir()
 	print 'cleaned workspace'
 }
 return this
